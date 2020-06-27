@@ -23,6 +23,8 @@ struct ContentView: View {
                     GaugeExample().nl("Gauge (watchOS)")
                     LabelExample().nl("Label")
                     LinkExample().nl("Link")
+                    TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
+.nl("Text Styles")
                 }
                 Section(header: Text("Other System Frameworks")) {
                     VideoPlayerExample().nl("Video player")

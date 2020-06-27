@@ -86,6 +86,31 @@ struct LinkExample: View {
     }
 }
 
+struct TextStylesExample: View {
+    let start: Date
+    let end: Date
+    
+    var body: some View {
+        List {
+            Text("\(start)")
+            
+            Text(start, style: .date)
+            
+            Text(start, style: .time)
+
+            Text(start, style: .offset)
+            
+            Text(start, style: .relative)
+            
+            Text(start, style: .timer)
+            
+            Text(start...end)
+            
+            Text(DateInterval(start: start, duration: 4000))
+        }
+    }
+}
+
 struct Views_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -104,6 +129,8 @@ struct Views_Previews: PreviewProvider {
             LabelExample()
             
             LinkExample()
+            
+            TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
         }
         .previewLayout(.sizeThatFits)
     }
