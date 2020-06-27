@@ -24,6 +24,7 @@ struct ContentView: View {
                     LabelExample().nl("Label")
                     LinkExample().nl("Link")
                     TextStylesExample(start: Date(), end: Date().advanced(by: 4000)).nl("Text Styles")
+                    PageTabViewStyleExample().nl("Paged Tab Style")
                 }
                 Section(header: Text("Other System Frameworks")) {
                     VideoPlayerExample().nl("Video player")
@@ -44,11 +45,13 @@ struct ContentView: View {
                     PlaceholderExample().nl("isPlaceholder (not in beta 1)")
                     MatchedGeometryEffectExample().nl("matchedGeometryEffect 🤯")
                     EventsExample().nl("Events")
-                    ContainerRelativeShapeExample().nl("Container corners")
+                    ContainerRelativeShapeExample().nl("Container corners (in the widget)")
                 }
                 Section(header: Text("Property Wrappers")) {
                     ScaledMetricExample().nl("@ScaledMetric")
                     StateObjectExample().nl("@StateObject")
+                    NamespaceExample().nl("@Namespace")
+                    StorageExample().nl("Storage")
                 }
             }
             .navigationBarTitle("What's new in SwiftUI", displayMode: .inline)

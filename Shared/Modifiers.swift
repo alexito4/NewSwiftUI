@@ -120,26 +120,7 @@ struct EventsExample: View {
 
 struct ContainerRelativeShapeExample: View {
     var body: some View {
-        ZStack {
-            Color.gray
-            
-            VStack {
-                Text("Inside the card")
-                
-                VStack {
-                    Text("Another stack")
-                    Image(systemName: "6.circle")
-                }
-                .padding()
-                .background(ContainerRelativeShape().fill(Color.gray))
-//                .cornerRadius(5)
-                
-            }
-            .padding(5.0)
-            .background(Color.purple)
-            .contentShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-            .cornerRadius(10)
-        }
+        Text("Check the Widget example.")
     }
 }
 

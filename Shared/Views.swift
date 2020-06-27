@@ -55,11 +55,24 @@ struct ColorPickerExample: View {
 }
 
 struct ProgressExample: View {
-    @State var color = Color.black
-    
+    @State private var progress = 0.42
+
     var body: some View {
-        VStack {
-            ProgressView("Progress", value: /*@START_MENU_TOKEN@*/0.5/*@END_MENU_TOKEN@*/, total: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 30) {
+            ProgressView() // CircularProgressViewStyle
+            
+            Divider()
+            
+            Button("Up up!", action: { progress += 0.05 })
+            
+            ProgressView(value: progress)
+            
+            ProgressView("Progress", value: progress, total: 1)
+
+            ProgressView(value: progress, total: 1) {
+                Label("Progress", systemImage: "07.circle.fill")
+            }
+            
         }.padding()
     }
 }
@@ -111,6 +124,33 @@ struct TextStylesExample: View {
     }
 }
 
+struct PageTabViewStyleExample: View {
+    var body: some View {
+        TabView {
+            Text("A")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.red)
+                .tabItem { Text("A") }
+            
+            Text("B")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.green)
+                .tabItem { Text("B") }
+            
+            Text("C")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.yellow)
+                .tabItem { Text("C") }
+            
+            Text("D")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.blue)
+                .tabItem { Text("D") }
+        }
+        .tabViewStyle(PageTabViewStyle())
+    }
+}
+
 struct Views_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -124,13 +164,15 @@ struct Views_Previews: PreviewProvider {
             
             ProgressExample()
             
-            GaugeExample()
-            
-            LabelExample()
-            
-            LinkExample()
-            
-            TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
+//            GaugeExample()
+//
+//            LabelExample()
+//
+//            LinkExample()
+//
+//            TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
+//
+//            PageTabViewStyleExample()
         }
         .previewLayout(.sizeThatFits)
     }

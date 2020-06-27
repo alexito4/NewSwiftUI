@@ -106,9 +106,9 @@ struct StorageExample: View {
     
     var body: some View {
         VStack {
-            Stepper("Scene", value: $sceneNumber)
-            Stepper("App", value: $appNumber)
-        }
+            Stepper("Scene: \(sceneNumber)", value: $sceneNumber, in: -100...100)
+            Stepper("App: \(appNumber)", value: $appNumber, in: -100...100)
+        }.padding()
     }
 }
 
