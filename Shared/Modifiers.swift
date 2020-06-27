@@ -64,17 +64,56 @@ struct MatchedGeometryEffectExample: View {
     }
 }
 
-struct OnChangeExample: View {
+import Combine
+class EventsModel: ObservableObject {
+    
+    @Published var date: Date = Date()
+    
+    private var cancellable: AnyCancellable?
+    
+    func start() {
+        cancellable = Timer.TimerPublisher(interval: 1.0, runLoop: .main, mode: .default)
+            .autoconnect()
+            .sink(receiveValue: { date in
+                self.date = date
+            })
+    }
+    
+    func stop() {
+        cancellable?.cancel()
+    }
+}
+struct EventsExample: View {
+    @ObservedObject var model = EventsModel()
     @State var number = 0
+    
     var body: some View {
         VStack {
             Button("Change") {
                 number += 1
             }
             Text("\(number)")
+            
+            HStack {
+                Button("Start") {
+                    model.start()
+                }
+                Button("Stop") {
+                    model.stop()
+                }
+            }
+        }
+        .onReceive(model.$date) { date in
+            print("onReceive: \(date)")
         }
         .onChange(of: number) { value in
             print("Number changed \(value)")
+        }
+        .onOpenURL { url in
+            print("URL opened")
+        }
+        .onContinueUserActivity("type") { activity in
+            print("Continue user activity")
         }
     }
 }
@@ -112,7 +151,7 @@ struct Modifiers_Previews: PreviewProvider {
             MatchedGeometryEffectExample()
                 .previewLayout(.device)
             
-            OnChangeExample()
+            EventsExample()
                 .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/))
             
             ContainerRelativeShapeExample()

@@ -23,8 +23,7 @@ struct ContentView: View {
                     GaugeExample().nl("Gauge (watchOS)")
                     LabelExample().nl("Label")
                     LinkExample().nl("Link")
-                    TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
-.nl("Text Styles")
+                    TextStylesExample(start: Date(), end: Date().advanced(by: 4000)).nl("Text Styles")
                 }
                 Section(header: Text("Other System Frameworks")) {
                     VideoPlayerExample().nl("Video player")
@@ -44,7 +43,7 @@ struct ContentView: View {
                 Section(header: Text("Modifiers")) {
                     PlaceholderExample().nl("isPlaceholder (not in beta 1)")
                     MatchedGeometryEffectExample().nl("matchedGeometryEffect 🤯")
-                    OnChangeExample().nl("onChange")
+                    EventsExample().nl("Events")
                     ContainerRelativeShapeExample().nl("Container corners")
                 }
                 Section(header: Text("Property Wrappers")) {

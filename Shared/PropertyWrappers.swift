@@ -100,7 +100,17 @@ struct NamespaceExample: View {
     }
 }
 
-
+struct StorageExample: View {
+    @SceneStorage("scene") var sceneNumber = 1
+    @AppStorage("app") var appNumber = 1
+    
+    var body: some View {
+        VStack {
+            Stepper("Scene", value: $sceneNumber)
+            Stepper("App", value: $appNumber)
+        }
+    }
+}
 
 struct PropertyWrappers_Previews: PreviewProvider {
     static var previews: some View {
@@ -110,6 +120,8 @@ struct PropertyWrappers_Previews: PreviewProvider {
             StateObjectExample()
             
             NamespaceExample()
+            
+            StorageExample()
         }
         .previewLayout(.sizeThatFits)
     }
