@@ -9,20 +9,21 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-struct Provider: IntentTimelineProvider {
-    public func snapshot(for configuration: ConfigurationIntent, with context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+struct Provider: TimelineProvider {
+    
+    func snapshot(with context: Context, completion: @escaping (SimpleEntry) -> ()) {
+        let entry = SimpleEntry(date: Date())
         completion(entry)
     }
-
-    public func timeline(for configuration: ConfigurationIntent, with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    
+    func timeline(with context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let entry = SimpleEntry(date: entryDate)
             entries.append(entry)
         }
 
@@ -33,12 +34,13 @@ struct Provider: IntentTimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     public let date: Date
-    public let configuration: ConfigurationIntent
 }
 
 struct PlaceholderView : View {
     var body: some View {
-        Text("Placeholder View")
+        WidgetsEntryView(entry: Provider.Entry(date: Date().advanced(by: 3000)))
+        //        .isPlaceholder(true)
+
     }
 }
 
@@ -46,7 +48,15 @@ struct WidgetsEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack {
+            Text(entry.date, style: .time)
+            Image(systemName: "circle.fill")
+                .foregroundColor(.red)
+        }
+        .padding()
+//        .background(Color.gray)
+//        .cornerRadius(100)
+        .background(ContainerRelativeShape().fill(Color.gray))
     }
 }
 
@@ -55,9 +65,9 @@ struct Widgets: Widget {
     private let kind: String = "Widgets"
 
     public var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider(), placeholder: PlaceholderView()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider(), placeholder: PlaceholderView(), content: { entry in
             WidgetsEntryView(entry: entry)
-        }
+        })
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
     }
@@ -65,13 +75,7 @@ struct Widgets: Widget {
 
 struct Widgets_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
-            Text("Real content")
-            Image(systemName: "circle.fill")
-                .foregroundColor(.red)
-        }
-        .padding()
-        .background(Color.gray)
-        .cornerRadius(10)
+        PlaceholderView()
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

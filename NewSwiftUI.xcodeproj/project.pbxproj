@@ -32,6 +32,16 @@
 		FBBB2AC624A1682D00FA6877 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB2A9B24A1682A00FA6877 /* ContentView.swift */; };
 		FBBB2AC724A1682D00FA6877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBBB2A9C24A1682C00FA6877 /* Assets.xcassets */; };
 		FBBB2AC824A1682D00FA6877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBBB2A9C24A1682C00FA6877 /* Assets.xcassets */; };
+		FBEC1E7024A6A7B100A23914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEC1E6F24A6A7B100A23914 /* Assets.xcassets */; };
+		FBEC1E7724A6A7B200A23914 /* NewSwiftUIWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FBEC1E7624A6A7B200A23914 /* NewSwiftUIWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FBEC1E7C24A6A7B200A23914 /* NewSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC1E7B24A6A7B200A23914 /* NewSwiftUIApp.swift */; };
+		FBEC1E7E24A6A7B200A23914 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC1E7D24A6A7B200A23914 /* ContentView.swift */; };
+		FBEC1E8024A6A7B200A23914 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC1E7F24A6A7B200A23914 /* NotificationController.swift */; };
+		FBEC1E8224A6A7B200A23914 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC1E8124A6A7B200A23914 /* NotificationView.swift */; };
+		FBEC1E8424A6A7B200A23914 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC1E8324A6A7B200A23914 /* ComplicationController.swift */; };
+		FBEC1E8624A6A7B300A23914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEC1E8524A6A7B300A23914 /* Assets.xcassets */; };
+		FBEC1E8924A6A7B300A23914 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEC1E8824A6A7B300A23914 /* Preview Assets.xcassets */; };
+		FBEC1E8E24A6A7B300A23914 /* NewSwiftUIWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FBEC1E6D24A6A7AF00A23914 /* NewSwiftUIWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,20 @@
 			remoteGlobalIDString = FBBB2AA824A1682C00FA6877;
 			remoteInfo = macOS;
 		};
+		FBEC1E7824A6A7B200A23914 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBBB2A9524A1682A00FA6877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBEC1E7524A6A7B200A23914;
+			remoteInfo = "NewSwiftUIWatch Extension";
+		};
+		FBEC1E8C24A6A7B300A23914 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBBB2A9524A1682A00FA6877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBEC1E6C24A6A7AF00A23914;
+			remoteInfo = NewSwiftUIWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +92,28 @@
 				FB73FC3B24A47A8300B40F19 /* WidgetsExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBEC1E9224A6A7B300A23914 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FBEC1E7724A6A7B200A23914 /* NewSwiftUIWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBEC1E9624A6A7B300A23914 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FBEC1E8E24A6A7B300A23914 /* NewSwiftUIWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -99,6 +145,19 @@
 		FBBB2ABC24A1682C00FA6877 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBB2AC024A1682D00FA6877 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		FBBB2AC224A1682D00FA6877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBEC1E6D24A6A7AF00A23914 /* NewSwiftUIWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSwiftUIWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBEC1E6F24A6A7B100A23914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBEC1E7124A6A7B100A23914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBEC1E7624A6A7B200A23914 /* NewSwiftUIWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NewSwiftUIWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBEC1E7B24A6A7B200A23914 /* NewSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSwiftUIApp.swift; sourceTree = "<group>"; };
+		FBEC1E7D24A6A7B200A23914 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FBEC1E7F24A6A7B200A23914 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		FBEC1E8124A6A7B200A23914 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		FBEC1E8324A6A7B200A23914 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		FBEC1E8524A6A7B300A23914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBEC1E8824A6A7B300A23914 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FBEC1E8A24A6A7B300A23914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBEC1E8B24A6A7B300A23914 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +198,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FBEC1E7324A6A7B200A23914 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -171,6 +237,8 @@
 				FBBB2AB424A1682C00FA6877 /* Tests iOS */,
 				FBBB2ABF24A1682C00FA6877 /* Tests macOS */,
 				FB73FC3024A47A8000B40F19 /* Widgets */,
+				FBEC1E6E24A6A7AF00A23914 /* NewSwiftUIWatch */,
+				FBEC1E7A24A6A7B200A23914 /* NewSwiftUIWatch Extension */,
 				FB73FC2B24A47A8000B40F19 /* Frameworks */,
 				FBBB2AA224A1682C00FA6877 /* Products */,
 			);
@@ -199,6 +267,8 @@
 				FBBB2AB124A1682C00FA6877 /* Tests iOS.xctest */,
 				FBBB2ABC24A1682C00FA6877 /* Tests macOS.xctest */,
 				FB73FC2A24A47A8000B40F19 /* WidgetsExtension.appex */,
+				FBEC1E6D24A6A7AF00A23914 /* NewSwiftUIWatch.app */,
+				FBEC1E7624A6A7B200A23914 /* NewSwiftUIWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +308,39 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		FBEC1E6E24A6A7AF00A23914 /* NewSwiftUIWatch */ = {
+			isa = PBXGroup;
+			children = (
+				FBEC1E6F24A6A7B100A23914 /* Assets.xcassets */,
+				FBEC1E7124A6A7B100A23914 /* Info.plist */,
+			);
+			path = NewSwiftUIWatch;
+			sourceTree = "<group>";
+		};
+		FBEC1E7A24A6A7B200A23914 /* NewSwiftUIWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FBEC1E7B24A6A7B200A23914 /* NewSwiftUIApp.swift */,
+				FBEC1E7D24A6A7B200A23914 /* ContentView.swift */,
+				FBEC1E7F24A6A7B200A23914 /* NotificationController.swift */,
+				FBEC1E8124A6A7B200A23914 /* NotificationView.swift */,
+				FBEC1E8324A6A7B200A23914 /* ComplicationController.swift */,
+				FBEC1E8524A6A7B300A23914 /* Assets.xcassets */,
+				FBEC1E8A24A6A7B300A23914 /* Info.plist */,
+				FBEC1E8B24A6A7B300A23914 /* PushNotificationPayload.apns */,
+				FBEC1E8724A6A7B300A23914 /* Preview Content */,
+			);
+			path = "NewSwiftUIWatch Extension";
+			sourceTree = "<group>";
+		};
+		FBEC1E8724A6A7B300A23914 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FBEC1E8824A6A7B300A23914 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,11 +369,13 @@
 				FBBB2A9E24A1682C00FA6877 /* Frameworks */,
 				FBBB2A9F24A1682C00FA6877 /* Resources */,
 				FB73FC3F24A47A8300B40F19 /* Embed App Extensions */,
+				FBEC1E9624A6A7B300A23914 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FB73FC3A24A47A8300B40F19 /* PBXTargetDependency */,
+				FBEC1E8D24A6A7B300A23914 /* PBXTargetDependency */,
 			);
 			name = iOS;
 			productName = iOS;
@@ -330,6 +435,40 @@
 			productReference = FBBB2ABC24A1682C00FA6877 /* Tests macOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		FBEC1E6C24A6A7AF00A23914 /* NewSwiftUIWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBEC1E9324A6A7B300A23914 /* Build configuration list for PBXNativeTarget "NewSwiftUIWatch" */;
+			buildPhases = (
+				FBEC1E6B24A6A7AF00A23914 /* Resources */,
+				FBEC1E9224A6A7B300A23914 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBEC1E7924A6A7B200A23914 /* PBXTargetDependency */,
+			);
+			name = NewSwiftUIWatch;
+			productName = NewSwiftUIWatch;
+			productReference = FBEC1E6D24A6A7AF00A23914 /* NewSwiftUIWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FBEC1E7524A6A7B200A23914 /* NewSwiftUIWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBEC1E8F24A6A7B300A23914 /* Build configuration list for PBXNativeTarget "NewSwiftUIWatch Extension" */;
+			buildPhases = (
+				FBEC1E7224A6A7B200A23914 /* Sources */,
+				FBEC1E7324A6A7B200A23914 /* Frameworks */,
+				FBEC1E7424A6A7B200A23914 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NewSwiftUIWatch Extension";
+			productName = "NewSwiftUIWatch Extension";
+			productReference = FBEC1E7624A6A7B200A23914 /* NewSwiftUIWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -356,6 +495,12 @@
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = FBBB2AA824A1682C00FA6877;
 					};
+					FBEC1E6C24A6A7AF00A23914 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					FBEC1E7524A6A7B200A23914 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 				};
 			};
 			buildConfigurationList = FBBB2A9824A1682A00FA6877 /* Build configuration list for PBXProject "NewSwiftUI" */;
@@ -376,6 +521,8 @@
 				FBBB2AB024A1682C00FA6877 /* Tests iOS */,
 				FBBB2ABB24A1682C00FA6877 /* Tests macOS */,
 				FB73FC2924A47A8000B40F19 /* WidgetsExtension */,
+				FBEC1E6C24A6A7AF00A23914 /* NewSwiftUIWatch */,
+				FBEC1E7524A6A7B200A23914 /* NewSwiftUIWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -416,6 +563,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBEC1E6B24A6A7AF00A23914 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBEC1E7024A6A7B100A23914 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBEC1E7424A6A7B200A23914 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBEC1E8924A6A7B300A23914 /* Preview Assets.xcassets in Resources */,
+				FBEC1E8624A6A7B300A23914 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +640,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FBEC1E7224A6A7B200A23914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBEC1E8024A6A7B200A23914 /* NotificationController.swift in Sources */,
+				FBEC1E7E24A6A7B200A23914 /* ContentView.swift in Sources */,
+				FBEC1E8424A6A7B200A23914 /* ComplicationController.swift in Sources */,
+				FBEC1E7C24A6A7B200A23914 /* NewSwiftUIApp.swift in Sources */,
+				FBEC1E8224A6A7B200A23914 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -493,6 +669,16 @@
 			isa = PBXTargetDependency;
 			target = FBBB2AA824A1682C00FA6877 /* macOS */;
 			targetProxy = FBBB2ABD24A1682C00FA6877 /* PBXContainerItemProxy */;
+		};
+		FBEC1E7924A6A7B200A23914 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBEC1E7524A6A7B200A23914 /* NewSwiftUIWatch Extension */;
+			targetProxy = FBEC1E7824A6A7B200A23914 /* PBXContainerItemProxy */;
+		};
+		FBEC1E8D24A6A7B300A23914 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBEC1E6C24A6A7AF00A23914 /* NewSwiftUIWatch */;
+			targetProxy = FBEC1E8C24A6A7B300A23914 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -839,6 +1025,96 @@
 			};
 			name = Release;
 		};
+		FBEC1E9024A6A7B300A23914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NewSwiftUIWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = WRQMG7GP6L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "NewSwiftUIWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alejandromp.NewSwiftUI.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		FBEC1E9124A6A7B300A23914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NewSwiftUIWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = WRQMG7GP6L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "NewSwiftUIWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alejandromp.NewSwiftUI.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		FBEC1E9424A6A7B300A23914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WRQMG7GP6L;
+				IBSC_MODULE = NewSwiftUIWatch_Extension;
+				INFOPLIST_FILE = NewSwiftUIWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alejandromp.NewSwiftUI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		FBEC1E9524A6A7B300A23914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WRQMG7GP6L;
+				IBSC_MODULE = NewSwiftUIWatch_Extension;
+				INFOPLIST_FILE = NewSwiftUIWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alejandromp.NewSwiftUI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -892,6 +1168,24 @@
 			buildConfigurations = (
 				FBBB2AD524A1682D00FA6877 /* Debug */,
 				FBBB2AD624A1682D00FA6877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBEC1E8F24A6A7B300A23914 /* Build configuration list for PBXNativeTarget "NewSwiftUIWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBEC1E9024A6A7B300A23914 /* Debug */,
+				FBEC1E9124A6A7B300A23914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBEC1E9324A6A7B300A23914 /* Build configuration list for PBXNativeTarget "NewSwiftUIWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBEC1E9424A6A7B300A23914 /* Debug */,
+				FBEC1E9524A6A7B300A23914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

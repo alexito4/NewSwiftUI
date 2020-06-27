@@ -66,8 +66,7 @@ struct ProgressExample: View {
 
 struct GaugeExample: View {
     var body: some View {
-        EmptyView()
-        // watchos
+        Text("Check watchOS target")
     }
 }
 

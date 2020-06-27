@@ -127,6 +127,7 @@ struct ScrollViewExample: View {
     }
 }
 
+#if !os(watchOS)
 struct OutlineGroupExample: View {
     struct FileItem: Hashable, Identifiable, CustomStringConvertible {
         var id: Self { self }
@@ -166,7 +167,15 @@ struct OutlineGroupExample: View {
         }
     }
 }
+#else
+struct OutlineGroupExample: View {
+    var body: some View {
+        Text("OutlineGroup not available.")
+    }
+}
+#endif
 
+#if !os(watchOS)
 struct DisclosureGroupExample: View {
     struct ToggleStates {
         var oneIsOn: Bool = false
@@ -188,6 +197,13 @@ struct DisclosureGroupExample: View {
         }
     }
 }
+#else
+struct DisclosureGroupExample: View {
+    var body: some View {
+        Text("DisclosureGroup not available.")
+    }
+}
+#endif
 
 struct Layout_Previews: PreviewProvider {
     static var previews: some View {

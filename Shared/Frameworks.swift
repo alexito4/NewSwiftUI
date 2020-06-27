@@ -41,6 +41,7 @@ struct MapExample: View {
     }
 }
 
+#if canImport(AVKit)
 import AVKit
 struct VideoPlayerExample: View {
     var body: some View {
@@ -52,6 +53,13 @@ struct VideoPlayerExample: View {
         }.padding()
     }
 }
+#else
+struct VideoPlayerExample: View {
+    var body: some View {
+        Text("AVKit not available.")
+    }
+}
+#endif
 
 import SpriteKit
 struct SpriteKitExample: View {
@@ -71,6 +79,32 @@ struct SceneKitExample: View {
     }
 }
 
+#if os(iOS)
+import StoreKit
+struct AppStoreExample: View {
+    @State var present = false
+    
+    var body: some View {
+        VStack {
+            Button("Open") {
+                present = true
+            }
+        }
+        .appStoreOverlay(isPresented: $present) {
+            SKOverlay.AppConfiguration(appIdentifier: "640199958", position: .bottom)
+        }
+    }
+}
+#else
+struct AppStoreExample: View {
+    @State var present = false
+    
+    var body: some View {
+        Text("StoreKit not available")
+    }
+}
+#endif
+
 struct Frameworks_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -81,6 +115,8 @@ struct Frameworks_Previews: PreviewProvider {
             SpriteKitExample()
             
             SceneKitExample()
+            
+            AppStoreExample()
         }
         .previewLayout(.sizeThatFits)
     }

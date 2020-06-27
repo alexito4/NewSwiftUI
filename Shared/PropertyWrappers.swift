@@ -52,30 +52,51 @@ struct ScaledMetricExample: View {
 struct StateObjectExample: View {
     
     @State var show = true
-    
+//    @ObservedObject var state = Model()
+
     var body: some View {
         VStack {
             Toggle("Show", isOn: $show)
+            StateObjectView()
+            ObservedObjectView()
             if show {
-                StateView()
+                Text("Show")
             }
         }.padding()
     }
     
-    struct StateView: View {
-        @ObservedObject var observed = Model()
-        @StateObject var state = Model() // TODO: should keep the state but it doesn't?
+    struct StateObjectView: View {
+        @StateObject var state = Model()
         
         var body: some View {
             VStack {
-                Stepper("ObservedObject \(observed.number)", value: $observed.number)
                 Stepper("StateObject \(state.number)", value: $state.number)
+            }
+        }
+    }
+    
+    struct ObservedObjectView: View {
+        @ObservedObject var state = Model() // NEEDS TO MOVE UP
+        
+        var body: some View {
+            VStack {
+                Stepper("ObservedObject \(state.number)", value: $state.number)
             }
         }
     }
     
     final class Model: ObservableObject {
         @Published var number = 0
+    }
+}
+
+struct NamespaceExample: View {
+    var body: some View {
+        List {
+            NavigationLink("For geometry effect", destination: MatchedGeometryEffectExample())
+            
+            // TODO: for focus managment
+        }
     }
 }
 
@@ -87,6 +108,9 @@ struct PropertyWrappers_Previews: PreviewProvider {
             ScaledMetricExample()
             
             StateObjectExample()
+            
+            NamespaceExample()
         }
+        .previewLayout(.sizeThatFits)
     }
 }

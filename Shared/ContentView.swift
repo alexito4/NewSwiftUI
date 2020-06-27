@@ -27,6 +27,9 @@ struct ContentView: View {
                 Section(header: Text("Other System Frameworks")) {
                     VideoPlayerExample().nl("Video player")
                     MapExample().nl("Map")
+                    SpriteKitExample().nl("SpriteKit")
+                    SceneKitExample().nl("SceneKit")
+                    AppStoreExample().nl("App Store Overlay with StoreKit")
                 }
                 Section(header: Text("Layout")) {
                     LazyStacksExample().nl("Lazy stacks")
@@ -37,7 +40,10 @@ struct ContentView: View {
                     DisclosureGroupExample().nl("Disclosure Group")
                 }
                 Section(header: Text("Modifiers")) {
-                    PlaceholderExample().nl("Placeholder")
+                    PlaceholderExample().nl("isPlaceholder (not in beta 1)")
+                    MatchedGeometryEffectExample().nl("matchedGeometryEffect 🤯")
+                    OnChangeExample().nl("onChange")
+                    ContainerRelativeShapeExample().nl("Container corners")
                 }
                 Section(header: Text("Property Wrappers")) {
                     ScaledMetricExample().nl("@ScaledMetric")
@@ -53,6 +59,21 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewLayout(.sizeThatFits)
+    }
+}
+
+struct Library: LibraryContentProvider {
+    
+    @LibraryContentBuilder
+    var views: [LibraryItem] {
+        LibraryItem(
+            VStack {
+                Text("Library Example")
+                Image(systemName: "book")
+            },
+            title: "Library Example",
+            category: .control
+        )
     }
 }
 
