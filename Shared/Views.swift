@@ -29,14 +29,22 @@ struct AppleSignInExample: View {
 struct MenusExample: View {
     var body: some View {
         EmptyView()
+//        VStack {
+//            Image(systemName: "paperplane")
+//                .contextMenu /*@START_MENU_TOKEN@*/{
+//                    Text("Menu Item 1")
+//                    Text("Menu Item 2")
+//                    Text("Menu Item 3")
+//                }/*@END_MENU_TOKEN@*/
+//        }
         // macos
-        //        Menu {
-        //            Button("Open in Preview", action: openInPreview)
-        //            Button("Save as PDF", action: saveAsPDF)
-        //        } label: {
-        //            Image(systemName: "document")
-        //            Text("PDF")
-        //        }
+//        Menu {
+//            Button("Open in Preview", action: openInPreview)
+//            Button("Save as PDF", action: saveAsPDF)
+//        } label: {
+//            Image(systemName: "document")
+//            Text("PDF")
+//        }
     }
 }
 

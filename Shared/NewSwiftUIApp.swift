@@ -15,9 +15,25 @@ struct NewSwiftUIApp: App {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            ExampleCommands()
+        }
     }
 }
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
     
+}
+
+struct ExampleCommands: Commands {
+    var body: some Commands {
+        CommandMenu("Example") {
+            Section {
+                Button("F") {
+                    print("F")
+                }
+                .keyboardShortcut("f")
+            }
+        }
+    }
 }

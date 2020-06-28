@@ -29,28 +29,15 @@ struct LazyStacksExample: View {
 
 struct PinnedViewsExample: View {
     var body: some View {
-        return EmptyView() // TODO: ??
-        NavigationLink("PinnedScrollableViews", destination: VStack {
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 10) {
-                    ScrollView(.horizontal) {
-                        LazyHStack {
-                            ForEach(1...100, id: \.self) {
-                                Text("Column \($0)")
-                                    .background(Color.secondary)
-                            }
-                        }
-                        .padding(.vertical, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                    }
-                    ForEach(1...100, id: \.self) {
-                        Text("Row \($0)")
-                            .padding()
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                            .background(Color.secondary)
+        ScrollView {
+            LazyVStack(pinnedViews: [.sectionHeaders]) {
+                Section(header: Text("Header").padding().background(Color.green)) {
+                    ForEach(0..<42) { _ in
+                        Text("Normal view").padding(.all, 10)
                     }
                 }
             }
-        })
+        }
     }
 }
 
