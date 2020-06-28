@@ -23,7 +23,7 @@ struct ContentView_Previews: PreviewProvider {
 
 struct GaugeExample: View {
     var body: some View {
-        Gauge(value: 42, in: 3...10) {
+        Gauge(value: 42, in: 3...50) {
             Image(systemName: "6.square.fill")
                 .foregroundColor(.green)
         } currentValueLabel: {
@@ -34,15 +34,5 @@ struct GaugeExample: View {
             Text("10")
         }
         .gaugeStyle(CircularGaugeStyle())
-
-
-//            currentValueLabel: "Current",
-//            minimumValueLabel: "Min",
-//            maximumValueLabel: "Max",
-//            markedValueLabels: {
-//                Text("10").tag(10)
-//                Text("20").tag(20)
-//            }
-//        )
     }
 }

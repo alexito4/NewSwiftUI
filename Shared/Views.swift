@@ -14,7 +14,7 @@ struct TextEditorExample: View {
 struct AppleSignInExample: View {
     var body: some View {
         VStack {
-            SignInWithAppleButton(/*@START_MENU_TOKEN@*/.signIn/*@END_MENU_TOKEN@*/,
+            SignInWithAppleButton(.signIn,
                                                         onRequest: { request in
                                                         },
                                                         onCompletion: { result in
@@ -29,14 +29,6 @@ struct AppleSignInExample: View {
 struct MenusExample: View {
     var body: some View {
         EmptyView()
-//        VStack {
-//            Image(systemName: "paperplane")
-//                .contextMenu /*@START_MENU_TOKEN@*/{
-//                    Text("Menu Item 1")
-//                    Text("Menu Item 2")
-//                    Text("Menu Item 3")
-//                }/*@END_MENU_TOKEN@*/
-//        }
         // macos
 //        Menu {
 //            Button("Open in Preview", action: openInPreview)
@@ -261,26 +253,6 @@ struct ToolbarStyleExample: View {
     
 }
 
-struct SidebarExample: View {
-    var body: some View {
-        NavigationView {
-            List {
-                Text("Sidebar Item 1")
-                Text("Sidebar Item 2")
-                Text("Sidebar Item 3")
-                Text("Sidebar Item 4")
-            }
-            .listStyle(SidebarListStyle())
-            VStack {
-                Text("Main View")
-            }
-            VStack {
-                Text("Detail view")
-            }
-        }
-    }
-}
-
 struct GroupedListsExample: View {
     var body: some View {
         List {
@@ -303,6 +275,26 @@ struct GroupedListsExample: View {
             Text("InsetGroupedListStyle")
         }
         .listStyle(InsetGroupedListStyle())
+    }
+}
+
+struct SidebarExample: View {
+    var body: some View {
+        NavigationView {
+            List {
+                Text("Sidebar Item 1")
+                Text("Sidebar Item 2")
+                Text("Sidebar Item 3")
+                Text("Sidebar Item 4")
+            }
+            .listStyle(SidebarListStyle())
+            VStack {
+                Text("Main View")
+            }
+            VStack {
+                Text("Detail view")
+            }
+        }
     }
 }
 
