@@ -15,10 +15,10 @@ struct AppleSignInExample: View {
     var body: some View {
         VStack {
             SignInWithAppleButton(/*@START_MENU_TOKEN@*/.signIn/*@END_MENU_TOKEN@*/,
-                onRequest: { request in
-                },
-                onCompletion: { result in
-                }
+                                                        onRequest: { request in
+                                                        },
+                                                        onCompletion: { result in
+                                                        }
             )
             .padding()
             .frame(height: 40.0)
@@ -56,7 +56,7 @@ struct ColorPickerExample: View {
 
 struct ProgressExample: View {
     @State private var progress = 0.42
-
+    
     var body: some View {
         VStack(spacing: 30) {
             ProgressView() // CircularProgressViewStyle
@@ -68,7 +68,7 @@ struct ProgressExample: View {
             ProgressView(value: progress)
             
             ProgressView("Progress", value: progress, total: 1)
-
+            
             ProgressView(value: progress, total: 1) {
                 Label("Progress", systemImage: "07.circle.fill")
             }
@@ -110,7 +110,7 @@ struct TextStylesExample: View {
             Text(start, style: .date)
             
             Text(start, style: .time)
-
+            
             Text(start, style: .offset)
             
             Text(start, style: .relative)
@@ -129,7 +129,7 @@ struct SymbolsExamples: View {
         List {
             Image(systemName: "location.fill")
                 .imageScale(.large)
-
+            
             Text("\(Image(systemName: "location.fill")) Location")
             
             Label("Title", systemImage: "shield")
@@ -178,6 +178,65 @@ struct PageTabViewStyleExample: View {
     }
 }
 
+struct ToolbarStyleExample: View {
+    @State var presented = false
+    
+    var body: some View {
+        VStack {
+            Text("Toolbars")
+                .padding()
+            
+            Button("Modal") {
+                presented.toggle()
+            }
+        }
+        .navigationBarTitle("Scren title", displayMode: .inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {}) {
+                    Image(systemName: "square.and.arrow.up.on.square.fill")
+                }
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {}) {
+                    Image(systemName: "square.and.pencil")
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {}) {
+                    Image(systemName: "lasso")
+                }
+            }
+            ToolbarItem(placement: .bottomBar) {
+                Button(action: {}) {
+                    Image(systemName: "square.and.arrow.up")
+                }
+            }
+        }
+        .sheet(isPresented: $presented) {
+            NavigationView {
+                VStack {
+                    Text("Presented")
+                }
+                .navigationBarTitle("Modal")
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Close") {
+                            presented = false
+                        }
+                    }
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Confirm") {
+                            presented = false
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
 struct Views_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -191,17 +250,20 @@ struct Views_Previews: PreviewProvider {
             
             ProgressExample()
             
-//            GaugeExample()
-//
-//            LabelExample()
-//
-//            LinkExample()
-//
-//            TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
+            //            GaugeExample()
+            //
+            //            LabelExample()
+            //
+            //            LinkExample()
+            //
+            //            TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
             
             SymbolsExamples()
-//
-//            PageTabViewStyleExample()
+            //
+            //            PageTabViewStyleExample()
+            NavigationView {
+                ToolbarStyleExample()
+            }
         }
         .previewLayout(.sizeThatFits)
     }
