@@ -29,6 +29,9 @@ struct ContentView: View {
                         TextStylesExample(start: Date(), end: Date().advanced(by: 4000)).nl("Text Styles")
                         SymbolsExamples().nl("SF Symbols")
                         PageTabViewStyleExample().nl("Paged Tab Style")
+                        ToolbarStyleExample().nl("Toolbars")
+                        SidebarExample().nl("Sidebar (iPad)")
+                        GroupedListsExample().nl("Grouped List")
                     }
                 }
                 Section(header: Text("Other System Frameworks")) {
@@ -57,6 +60,7 @@ struct ContentView: View {
                     StateObjectExample().nl("@StateObject")
                     NamespaceExample().nl("@Namespace")
                     StorageExample().nl("Storage")
+                    ApplicationDelegateExample().nl("@UIApplicationDelegateAdaptor")
                 }
             }
             .navigationBarTitle("What's new in SwiftUI", displayMode: .inline)

@@ -64,9 +64,11 @@ struct VideoPlayerExample: View {
 import SpriteKit
 struct SpriteKitExample: View {
     var body: some View {
-        VStack {
-            EmptyView()
-        }.padding()
+        ZStack {
+//            SpriteView(scene: scene)
+            Button("SwiftUI Button") {}
+        }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -74,6 +76,7 @@ import SceneKit
 struct SceneKitExample: View {
     var body: some View {
         VStack {
+//            SceneView()
             EmptyView()
         }.padding()
     }

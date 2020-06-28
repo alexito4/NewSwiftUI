@@ -112,6 +112,12 @@ struct StorageExample: View {
     }
 }
 
+struct ApplicationDelegateExample: View {
+    var body: some View {
+        Text("Check App struct")
+    }
+}
+
 struct PropertyWrappers_Previews: PreviewProvider {
     static var previews: some View {
         Group {

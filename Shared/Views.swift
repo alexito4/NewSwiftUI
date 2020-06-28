@@ -257,6 +257,31 @@ struct SidebarExample: View {
     }
 }
 
+struct GroupedListsExample: View {
+    var body: some View {
+        List {
+            Section {
+                NavigationLink(destination: newGroupedListStyleExample()) {
+                    Text("Open new Inset Grouped ")
+                }
+            }
+            Section {
+                ForEach(0..<10) { _ in
+                    Text("Grouped style")
+                }
+            }
+        }
+        .listStyle(GroupedListStyle())
+    }
+    
+    func newGroupedListStyleExample() -> some View {
+        List(0..<42) { _ in
+            Text("InsetGroupedListStyle")
+        }
+        .listStyle(InsetGroupedListStyle())
+    }
+}
+
 struct Views_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -278,15 +303,17 @@ struct Views_Previews: PreviewProvider {
             //
             //            TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
             
-            SymbolsExamples()
+//            SymbolsExamples()
             //
             //            PageTabViewStyleExample()
-            NavigationView {
-                ToolbarStyleExample()
-            }
+//            NavigationView {
+//                ToolbarStyleExample()
+//            }
             
-            SidebarExample()
-                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
+//            SidebarExample()
+//                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
+            
+            GroupedListsExample()
         }
         .previewLayout(.sizeThatFits)
     }
