@@ -66,6 +66,9 @@ struct ContentView: View {
                     StorageExample().nl("Storage")
                     ApplicationDelegateExample().nl("@UIApplicationDelegateAdaptor")
                 }
+                Section(header: Text("Other")) {
+                    ExportExample().nl("Export")
+                }
             }
             .navigationBarTitle("What's new in SwiftUI", displayMode: .inline)
         }
