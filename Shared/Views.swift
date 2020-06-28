@@ -99,6 +99,19 @@ struct LinkExample: View {
     }
 }
 
+struct DatePickerExample: View {
+    @State var date = Date()
+    
+    var body: some View {
+        VStack {
+            DatePicker("GraphicalDatePickerStyle", selection: $date)
+                .datePickerStyle(GraphicalDatePickerStyle())
+                .frame(height: 500)
+            Spacer()
+        }
+    }
+}
+
 struct TextStylesExample: View {
     let start: Date
     let end: Date
@@ -120,6 +133,9 @@ struct TextStylesExample: View {
             Text(start...end)
             
             Text(DateInterval(start: start, duration: 4000))
+            
+            Text("Automatically uppercase a text")
+                .textCase(.uppercase)
         }
     }
 }
@@ -285,21 +301,24 @@ struct GroupedListsExample: View {
 struct Views_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TextEditorExample()
-            
-            AppleSignInExample()
-            
-            MenusExample()
-            
-            ColorPickerExample()
-            
-            ProgressExample()
-            
+//            TextEditorExample()
+//
+//            AppleSignInExample()
+//
+//            MenusExample()
+//
+//            ColorPickerExample()
+//
+//            ProgressExample()
+//
             //            GaugeExample()
             //
             //            LabelExample()
             //
             //            LinkExample()
+            
+            DatePickerExample()
+            
             //
             //            TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
             
@@ -313,7 +332,7 @@ struct Views_Previews: PreviewProvider {
 //            SidebarExample()
 //                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
             
-            GroupedListsExample()
+//            GroupedListsExample()
         }
         .previewLayout(.sizeThatFits)
     }

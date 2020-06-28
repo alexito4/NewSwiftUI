@@ -64,6 +64,43 @@ struct MatchedGeometryEffectExample: View {
     }
 }
 
+struct FullCoverExample: View {
+    @State var fullscreen = false
+    @State var sheet = false
+
+    var body: some View {
+        VStack {
+            Button("Open full screen cover") {
+                fullscreen = true
+            }
+            .fullScreenCover(isPresented: $fullscreen) {
+                Presented()
+            }
+            
+            Button("Open sheet") {
+                sheet = true
+            }
+            .sheet(isPresented: $sheet) {
+                Presented()
+            }
+        }
+    }
+    
+    struct Presented: View {
+        @Environment(\.presentationMode) var presentationMode
+        
+        var body: some View {
+            Text("Modal")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.gray)
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    presentationMode.wrappedValue.dismiss()
+                }
+        }
+    }
+}
+
 import Combine
 class EventsModel: ObservableObject {
     
@@ -131,6 +168,8 @@ struct Modifiers_Previews: PreviewProvider {
             
             MatchedGeometryEffectExample()
                 .previewLayout(.device)
+            
+            FullCoverExample()
             
             EventsExample()
                 .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/))

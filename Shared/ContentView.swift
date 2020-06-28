@@ -26,12 +26,15 @@ struct ContentView: View {
                     Group {
                         LabelExample().nl("Label")
                         LinkExample().nl("Link")
+                        DatePickerExample().nl("Date picker")
                         TextStylesExample(start: Date(), end: Date().advanced(by: 4000)).nl("Text Styles")
                         SymbolsExamples().nl("SF Symbols")
+                    }
+                    Group {
                         PageTabViewStyleExample().nl("Paged Tab Style")
                         ToolbarStyleExample().nl("Toolbars")
-                        SidebarExample().nl("Sidebar (iPad)")
                         GroupedListsExample().nl("Grouped List")
+                        SidebarExample().nl("Sidebar (iPad)")
                     }
                 }
                 Section(header: Text("Other System Frameworks")) {
@@ -52,6 +55,7 @@ struct ContentView: View {
                 Section(header: Text("Modifiers")) {
                     PlaceholderExample().nl("isPlaceholder (not in beta 1)")
                     MatchedGeometryEffectExample().nl("matchedGeometryEffect 🤯")
+                    FullCoverExample().nl("Full Screen Cover")
                     EventsExample().nl("Events")
                     ContainerRelativeShapeExample().nl("Container corners (in the widget)")
                 }
