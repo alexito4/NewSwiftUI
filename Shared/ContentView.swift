@@ -15,16 +15,21 @@ struct ContentView: View {
         NavigationView {
             List {
                 Section(header: Text("Views")) {
-                    TextEditorExample().nl("Text Editor")
-                    AppleSignInExample().nl("Apple Sign In")
-                    MenusExample().nl("Menus")
-                    ColorPickerExample().nl("Color picker")
-                    ProgressExample().nl("Progress")
-                    GaugeExample().nl("Gauge (watchOS)")
-                    LabelExample().nl("Label")
-                    LinkExample().nl("Link")
-                    TextStylesExample(start: Date(), end: Date().advanced(by: 4000)).nl("Text Styles")
-                    PageTabViewStyleExample().nl("Paged Tab Style")
+                    Group {
+                        TextEditorExample().nl("Text Editor")
+                        AppleSignInExample().nl("Apple Sign In")
+                        MenusExample().nl("Menus")
+                        ColorPickerExample().nl("Color picker")
+                        ProgressExample().nl("Progress")
+                        GaugeExample().nl("Gauge (watchOS)")
+                    }
+                    Group {
+                        LabelExample().nl("Label")
+                        LinkExample().nl("Link")
+                        TextStylesExample(start: Date(), end: Date().advanced(by: 4000)).nl("Text Styles")
+                        SymbolsExamples().nl("SF Symbols")
+                        PageTabViewStyleExample().nl("Paged Tab Style")
+                    }
                 }
                 Section(header: Text("Other System Frameworks")) {
                     VideoPlayerExample().nl("Video player")

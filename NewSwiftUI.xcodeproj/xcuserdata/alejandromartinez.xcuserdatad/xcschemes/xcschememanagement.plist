@@ -27,7 +27,7 @@
 		<key>NewSwiftUIWatch.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<key>WidgetsExtension.xcscheme_^#shared#^_</key>
 		<dict>
@@ -42,7 +42,7 @@
 		<key>macOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 </dict>

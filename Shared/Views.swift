@@ -124,6 +124,33 @@ struct TextStylesExample: View {
     }
 }
 
+struct SymbolsExamples: View {
+    var body: some View {
+        List {
+            Image(systemName: "location.fill")
+                .imageScale(.large)
+
+            Text("\(Image(systemName: "location.fill")) Location")
+            
+            Label("Title", systemImage: "shield")
+            
+            HStack {
+                Image(systemName: "folder.badge.plus")
+                    .renderingMode(.template)
+                
+                Image(systemName: "folder.badge.plus")
+                    .renderingMode(.template)
+                    .foregroundColor(.red)
+                
+                Image(systemName: "folder.badge.plus")
+                    .renderingMode(.original)
+            }
+            .imageScale(.large)
+            
+        }
+    }
+}
+
 struct PageTabViewStyleExample: View {
     var body: some View {
         TabView {
@@ -171,6 +198,8 @@ struct Views_Previews: PreviewProvider {
 //            LinkExample()
 //
 //            TextStylesExample(start: Date(), end: Date().advanced(by: 4000))
+            
+            SymbolsExamples()
 //
 //            PageTabViewStyleExample()
         }
