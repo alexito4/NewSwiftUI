@@ -237,6 +237,26 @@ struct ToolbarStyleExample: View {
     
 }
 
+struct SidebarExample: View {
+    var body: some View {
+        NavigationView {
+            List {
+                Text("Sidebar Item 1")
+                Text("Sidebar Item 2")
+                Text("Sidebar Item 3")
+                Text("Sidebar Item 4")
+            }
+            .listStyle(SidebarListStyle())
+            VStack {
+                Text("Main View")
+            }
+            VStack {
+                Text("Detail view")
+            }
+        }
+    }
+}
+
 struct Views_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -264,6 +284,9 @@ struct Views_Previews: PreviewProvider {
             NavigationView {
                 ToolbarStyleExample()
             }
+            
+            SidebarExample()
+                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
         }
         .previewLayout(.sizeThatFits)
     }
