@@ -58,6 +58,7 @@ struct ContentView: View {
                     FullCoverExample().nl("Full Screen Cover")
                     EventsExample().nl("Events")
                     ContainerRelativeShapeExample().nl("Container corners (in the widget)")
+                    HelpExample().nl("Help")
                 }
                 Section(header: Text("Property Wrappers")) {
                     ScaledMetricExample().nl("@ScaledMetric")

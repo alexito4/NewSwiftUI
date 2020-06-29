@@ -161,6 +161,13 @@ struct ContainerRelativeShapeExample: View {
     }
 }
 
+struct HelpExample: View {
+    var body: some View {
+        Text("Help")
+            .help("Help text")
+    }
+}
+
 struct Modifiers_Previews: PreviewProvider {
     static var previews: some View {
         Group {
