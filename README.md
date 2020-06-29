@@ -2,9 +2,7 @@
 
 Everything new in SwiftUI #WWDC20
 
-THIS REPO IS BEING UPDATE AS I FIND NEW THINGS ON THE SESSIONS.
-
-The plan is to make a video on [my channel](https://www.youtube.com/channel/UCfiBFlVY8s-tmJGDMNCd26w?view_as=subscriber) when I compile everything that it's new, probably after the dust settles.
+<a href="https://www.youtube.com/watch?v=UF545b2t4f4"><img src="http://i3.ytimg.com/vi/UF545b2t4f4/maxresdefault.jpg"/></a>
 
 ## Author
 
